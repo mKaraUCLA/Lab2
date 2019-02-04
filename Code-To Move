@@ -1,0 +1,84 @@
+
+void drive(int left, int right) {
+  servo_left.write(left);
+  servo_right.write(right);
+}
+
+void stop() {
+  DEBUG("stop");
+//  drive(servo_left_ctr, servo_right_ctr);
+  drive(90, 90);
+
+  LED_OFF;
+}
+
+void forward() {
+  DEBUG("forward");
+//  drive(110, 1);
+  drive(110, 56);
+
+  for(int i = 0; i <20; i++){
+    Serial.print("Lidar 1 range(mm): ");
+    Serial.print(sensor.readRangeSingleMillimeters());
+    Serial.print("  Lidar 2 range(mm): ");
+    Serial.println(sensor2.readRangeSingleMillimeters());
+    Serial.print("  degree: ");
+    Serial.print(fuckdegree());  
+    
+    Serial.print("\n");
+
+   }
+  //delay(2000);
+}
+
+void backward() {
+  DEBUG("backward");
+  drive(62, 180);
+
+  for(int i = 0; i <20; i++){
+  Serial.print("Lidar 1 range(mm): ");
+  Serial.print(sensor.readRangeSingleMillimeters());
+  Serial.print("  Lidar 2 range(mm): ");
+  Serial.println(sensor2.readRangeSingleMillimeters());
+  Serial.print("  degree: ");
+  Serial.print(fuckdegree());  
+  Serial.print("\n");
+
+  }
+}
+
+void left() {
+  DEBUG("left");
+  drive(62, 1);
+
+  for(int i = 0; i <20; i++){
+  Serial.print("Lidar 1 range(mm): ");
+  Serial.print(sensor.readRangeSingleMillimeters());
+  Serial.print("  Lidar 2 range(mm): ");
+  Serial.println(sensor2.readRangeSingleMillimeters());
+  Serial.print("  degree: ");
+  Serial.print(fuckdegree());  
+  Serial.print("\n");
+
+
+  }
+
+}
+
+void right() {
+  DEBUG("right");
+  drive(110, 180);
+  for(int i = 0; i <20; i++){
+  Serial.print("Lidar 1 range(mm): ");
+  Serial.print(sensor.readRangeSingleMillimeters());
+  Serial.print("  Lidar 2 range(mm): ");
+  Serial.println(sensor2.readRangeSingleMillimeters());  
+  Serial.print("  degree: ");
+  Serial.print(fuckdegree());  
+  Serial.print("\n");
+
+  }
+
+
+  }
+
